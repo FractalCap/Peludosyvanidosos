@@ -631,8 +631,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const checkDate = new Date(year, month, i);
             const dayOfWeek = checkDate.getDay();
             
-            // Disable weekends (0=Sun, 6=Sat) or past dates
-            if (checkDate < today || dayOfWeek === 0 || dayOfWeek === 6) {
+            // Disable Sundays (0=Sun) or past dates. Saturdays are enabled.
+            if (checkDate < today || dayOfWeek === 0) {
                 dayEl.classList.add('disabled');
             } else {
                 dayEl.addEventListener('click', () => {
@@ -669,8 +669,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const dateObj = new Date(bookingData.date);
         dateDisplay.textContent = dateObj.toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric', month: 'long' });
 
-        // Slots: 9am - 1pm (Last slot depends on service duration, assuming 1h slots: 9, 10, 11, 12)
-        const slots = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM'];
+        const dayOfWeek = dateObj.getDay(); // 0=Sun, 6=Sat
+        const service = bookingData.service;
+        let slots = [];
+
+        // Logic:
+        // Vet: Mon-Sat 9am - 3:30pm
+        // Bath (and others): Mon-Fri 9am - 1pm, Sat 9am - 3pm
+        
+        const isVet = service === 'Servicio Veterinario';
+        const isSaturday = dayOfWeek === 6;
+
+        if (isVet) {
+             // Vet: 9am - 3:30pm. Slots: 9, 10, 11, 12, 1, 2. (Last slot 2pm-3pm).
+             slots = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM'];
+        } else {
+            // Bath & Others
+            if (isSaturday) {
+                // Sat: 9am - 3pm. Slots: 9, 10, 11, 12, 1, 2.
+                slots = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM'];
+            } else {
+                // Mon-Fri: 9am - 1pm. Slots: 9, 10, 11, 12.
+                slots = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM'];
+            }
+        }
         
         slots.forEach(time => {
             const btn = document.createElement('button');
