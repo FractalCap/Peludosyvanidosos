@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Cinzel:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -65,7 +65,7 @@
         <section id="inicio" class="hero">
             <div class="hero-bg-video">
                 <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-1.2.1&auto=format&fit=cover&w=1920&q=80">
-                    <source src="https://videos.pexels.com/video-files/3045714/3045714-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    <source src="intro.mp4" type="video/mp4">
                     Tu navegador no soporta videos HTML5.
                 </video>
             </div>
@@ -79,6 +79,7 @@
                         Por eso, cuidar el pelo de un perro no es cuestión únicamente<br>
                         de tener el cepillo más adecuado<br>
                         para el nuestro o ser regulares con su aseo.</p>
+                        <p style="color: #FFDE5C; font-weight: bold; margin-top: 1rem; font-size: 1.5rem;">Pregunta por la comida BARF</p>
                     </div>
                     <div style="margin-top: 2.5rem;">
                          <a href="#tienda" class="btn btn-hero ripple-effect">
@@ -127,27 +128,82 @@
                 <div class="unified-service-container fade-in-up delay-200">
                     <div class="service-selector-wrapper">
                         <div class="service-menu">
-                            <button class="service-tab active" data-service="veterinario">
-                                <span class="tab-icon">🩺</span>
-                                <span class="tab-text">Servicio Veterinario</span>
-                            </button>
-                            <button class="service-tab" data-service="grooming">
-                                <span class="tab-icon">✂️</span>
-                                <span class="tab-text">Grooming Canino</span>
-                            </button>
-                            <button class="service-tab" data-service="drenaje">
-                                <span class="tab-icon">⚡</span>
-                                <span class="tab-text">Drenaje de Energía</span>
-                            </button>
-                            <button class="service-tab" data-service="banho">
+                            <button class="service-tab active" data-service="banho">
                                 <span class="tab-icon">🛁</span>
                                 <span class="tab-text">Baño y Peluquería</span>
+                            </button>
+
+                            <button class="service-tab" data-service="guarderia">
+                                <span class="tab-icon">🏡</span>
+                                <span class="tab-text">Guardería</span>
+                            </button>
+                            <button class="service-tab" data-service="veterinario">
+                                <span class="tab-icon">🩺</span>
+                                <span class="tab-text">Servicio Veterinario</span>
                             </button>
                         </div>
                         
                         <div class="service-details-panel">
+                            <!-- Banho Content (Merged Grooming & Banho) -->
+                            <div class="service-content active" id="content-banho">
+                                <div class="content-header">
+                                    <h3>Baño y Peluquería Canina y Felina</h3>
+                                    <p>Estética especializada y higiene profunda para resaltar la belleza de tu mascota.</p>
+                                </div>
+                                <div class="content-body">
+                                    <ul>
+                                        <li>✅ Baños medicados y cosméticos</li>
+                                        <li>✅ Cortes de raza y Styling profesional</li>
+                                        <li>✅ Corte de uñas y limpieza de oídos</li>
+                                        <li>✅ Productos hipoalergénicos</li>
+                                        <li style="color: var(--color-primary-600); font-weight: 500; margin-top: 0.5rem;">🕒 Lun-Vie: 9am - 1pm | Sáb: 9am - 3pm</li>
+                                    </ul>
+                                    <div id="banho-media-container" style="margin-top: 1.5rem; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 16/9; background-color: #f0f0f0;">
+                                        <img src="https://i.postimg.cc/28gc5Mx3/ffa5f5ea-59f9-46aa-96e0-25e8038efbfd.jpg" alt="Galería Baño y Peluquería" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                    </div>
+                                    <div style="margin-top: 1rem;">
+                                        <button id="banho-next-btn" class="btn btn-secondary" style="width: 100%;">Siguiente ➡</button>
+                                    </div>
+                                </div>
+                                <div class="content-action">
+                                    <button class="btn btn-primary schedule-btn" data-service="Baño y Peluquería Canina y Felina">Agendar Cita</button>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Guarderia Content (New) -->
+                            <div class="service-content" id="content-guarderia">
+                                <div class="content-header">
+                                    <h3>Guardería Canina</h3>
+                                    <p>Diversión, cuidado, socialización y equilibrio físico y mental en un ambiente seguro.</p>
+                                </div>
+                                <div class="content-body">
+                                    <ul>
+                                        <li>✅ Zona de juegos y descanso</li>
+                                        <li>✅ Socialización supervisada</li>
+                                        <li>✅ Paseos, caminatas y actividades recreativas</li>
+                                        <li>✅ Ejercicios dirigidos y estimulación mental</li>
+                                        <li>✅ Corrección de conducta</li>
+                                        <li style="color: var(--color-primary-600); font-weight: 500; margin-top: 0.5rem;">🕒 Lun-Vie: 7am - 6pm</li>
+                                    </ul>
+                                    <div id="guarderia-media-container" style="margin-top: 1.5rem; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 16/9; background-color: #000;">
+                                        <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                            <source src="3.mp4" type="video/mp4">
+                                            Tu navegador no soporta videos HTML5.
+                                        </video>
+                                    </div>
+                                    <div style="margin-top: 1rem;">
+                                        <button id="guarderia-next-btn" class="btn btn-secondary" style="width: 100%;">Siguiente ➡</button>
+                                    </div>
+                                </div>
+                                <div class="content-action">
+                                    <button class="btn btn-primary schedule-btn" data-service="Guardería Canina">Agendar Cita</button>
+                                </div>
+                            </div>
+
                             <!-- Veterinario Content -->
-                            <div class="service-content active" id="content-veterinario">
+                            <div class="service-content" id="content-veterinario">
                                 <div class="content-header">
                                     <h3>Servicio Veterinario</h3>
                                     <p>Atención profesional integral para la salud de tu mascota.</p>
@@ -159,68 +215,76 @@
                                         <li>✅ Chequeos preventivos</li>
                                         <li style="color: var(--color-primary-600); font-weight: 500; margin-top: 0.5rem;">🕒 Lun-Sáb: 9am - 3:30pm</li>
                                     </ul>
+                                    <div id="veterinario-media-container" style="margin-top: 1.5rem; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); aspect-ratio: 16/9; background-color: #f0f0f0;">
+                                        <img src="https://i.postimg.cc/tJkZ6f17/53da7772-74a9-4b16-813a-5b78db8d565c.jpg" alt="Galería Veterinaria" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                                    </div>
+                                    <div style="margin-top: 1rem;">
+                                        <button id="veterinario-next-btn" class="btn btn-secondary" style="width: 100%;">Siguiente ➡</button>
+                                    </div>
                                 </div>
                                 <div class="content-action">
                                     <button class="btn btn-primary schedule-btn" data-service="Servicio Veterinario">Agendar Cita</button>
                                 </div>
                             </div>
-
-                            <!-- Grooming Content -->
-                            <div class="service-content" id="content-grooming">
-                                <div class="content-header">
-                                    <h3>Grooming Canino</h3>
-                                    <p>Estética especializada para resaltar la belleza de tu perro.</p>
-                                </div>
-                                <div class="content-body">
-                                    <ul>
-                                        <li>✅ Cortes de raza específicos</li>
-                                        <li>✅ Styling profesional</li>
-                                        <li style="color: var(--color-primary-600); font-weight: 500; margin-top: 0.5rem;">🕒 Lun-Vie: 9am - 1pm | Sáb: 9am - 3pm</li>
-                                        <li>✅ Cuidado del pelaje</li>
-                                    </ul>
-                                </div>
-                                <div class="content-action">
-                                    <button class="btn btn-primary schedule-btn" data-service="Grooming Canino">Agendar Cita</button>
-                                </div>
-                            </div>
-
-                            <!-- Drenaje Content -->
-                            <div class="service-content" id="content-drenaje">
-                                <div class="content-header">
-                                    <h3>Drenaje de Energía</h3>
-                                    <p>Equilibrio físico y mental para reducir la ansiedad.</p>
-                                </div>
-                                <div class="content-body">
-                                    <ul>
-                                        <li>✅ Ejercicios dirigidos</li>
-                                        <li>✅ Corrección de conducta</li>
-                                        <li>✅ Estimulación mental</li>
-                                    </ul>
-                                </div>
-                                <div class="content-action">
-                                    <button class="btn btn-primary schedule-btn" data-service="Drenaje de Energía y Corrección de Conducta">Agendar Cita</button>
-                                </div>
-                            </div>
-
-                            <!-- Banho Content -->
-                            <div class="service-content" id="content-banho">
-                                <div class="content-header">
-                                    <h3>Baño y Peluquería</h3>
-                                    <p>Higiene profunda y corte para perros y gatos.</p>
-                                </div>
-                                <div class="content-body">
-                                    <ul>
-                                        <li>✅ Baños medicados y cosméticos</li>
-                                        <li style="color: var(--color-primary-600); font-weight: 500; margin-top: 0.5rem;">🕒 Lun-Vie: 9am - 1pm | Sáb: 9am - 3pm</li>
-                                        <li>✅ Corte de uñas y limpieza de oídos</li>
-                                        <li>✅ Productos hipoalergénicos</li>
-                                    </ul>
-                                </div>
-                                <div class="content-action">
-                                    <button class="btn btn-primary schedule-btn" data-service="Baño y Peluquería Canina y Felina">Agendar Cita</button>
-                                </div>
-                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pet Shop Showcase Section -->
+        <section id="pet-shop-showcase" class="section" style="background-color: var(--color-gray-50);">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-subtitle">Pet Shop</span>
+                    <h2>Todo para tu Peludo</h2>
+                    <p>Encuentra los mejores juguetes, accesorios y snacks en nuestra tienda.</p>
+                </header>
+
+                <div class="grid grid-3 fade-in-up delay-100">
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden; height: 100%;">
+                        <img src="https://i.postimg.cc/v8N0gNsF/801ae7ac-9c55-4d73-ad96-cf901060c5fc.jpg" alt="Pet Shop Producto 1" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden; height: 100%;">
+                        <img src="https://i.postimg.cc/0NPn1gpr/fc08b643-e58f-443d-bca8-e13bac3ed1d5.jpg" alt="Pet Shop Producto 2" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden; height: 100%;">
+                        <img src="https://i.postimg.cc/hj31mfNC/2e1086e1-ea62-4a03-b619-70453e68f865.jpg" alt="Pet Shop Producto 3" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden; height: 100%;">
+                        <img src="https://i.postimg.cc/wx7SGJqS/e9640daf-df80-42a6-883a-8846a8ca6d86.jpg" alt="Pet Shop Producto 4" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden; height: 100%;">
+                        <img src="https://i.postimg.cc/qBS9VRgc/3c2bb938-f17f-4073-8afa-6c371e7fbd86.jpg" alt="Pet Shop Producto 5" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden; height: 100%;">
+                        <img src="https://i.postimg.cc/XYchCkLx/ed19c931-7989-4369-ba38-74cec40147fb.jpg" alt="Pet Shop Producto 6" style="width: 100%; height: 300px; object-fit: cover; transition: transform 0.5s ease;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Otros Servicios Section -->
+        <section id="otros-servicios" class="section">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-subtitle">Más Opciones</span>
+                    <h2>Otros Servicios</h2>
+                </header>
+
+                <div class="fade-in-up" style="margin-bottom: 3rem; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl);">
+                    <video autoplay muted loop playsinline controls style="width: 100%; display: block;">
+                        <source src="03.mp4" type="video/mp4">
+                        Tu navegador no soporta videos HTML5.
+                    </video>
+                </div>
+
+                <div class="grid grid-2 fade-in-up delay-100">
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden;">
+                        <img src="https://i.postimg.cc/vBVHMK73/75af7f46-c6e0-4cea-b735-bd7d9c88d9bf.jpg" alt="Otros servicios 1" style="width: 100%; height: auto; display: block;">
+                    </div>
+                    <div class="card" style="border-radius: var(--radius-lg); overflow: hidden;">
+                        <img src="https://i.postimg.cc/L6R6KNJn/26f6b8cb-f4f8-417a-97f7-12b6ac53275d.jpg" alt="Otros servicios 2" style="width: 100%; height: auto; display: block;">
                     </div>
                 </div>
             </div>
@@ -233,13 +297,7 @@
                     <div class="fade-in-up">
                         <span class="section-subtitle">Sobre Nosotros</span>
                         <h2>Pasión por los Animales</h2>
-                        <p>En <strong>Peludos y vanidosos</strong>, entendemos que tu mascota es parte de la familia. Nos dedicamos a ofrecer una experiencia de grooming superior, donde la estética se encuentra con el bienestar.</p>
-                        <p>Nuestro equipo de profesionales utiliza productos de alta calidad y técnicas suaves para asegurar que tu peludo se vea y se sienta espectacular.</p>
-                        <ul style="margin-top: 1.5rem; display: grid; gap: 0.5rem;">
-                            <li style="display: flex; align-items: center; gap: 0.5rem;">✅ Profesionales certificados</li>
-                            <li style="display: flex; align-items: center; gap: 0.5rem;">✅ Productos hipoalergénicos</li>
-                            <li style="display: flex; align-items: center; gap: 0.5rem;">✅ Ambiente libre de estrés</li>
-                        </ul>
+                        <p>Los 16 años posicionados en suba brindando el cuidado de los peluditos caninos y felinos </p>
                     </div>
                     <div class="fade-in-up delay-100">
                         <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl);">

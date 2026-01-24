@@ -406,14 +406,12 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: 'Dr. Juan Pérez', avatar: '👨‍⚕️' },
             { name: 'Dra. María Gómez', avatar: '👩‍⚕️' }
         ],
-        'Grooming Canino': [
-            { name: 'Pedro Estilista', avatar: '✂️' },
-            { name: 'Ana Cortés', avatar: '🐩' }
-        ],
         'Drenaje de Energía y Corrección de Conducta': [
             { name: 'Entrenador Carlos', avatar: '⚡' }
         ],
         'Baño y Peluquería Canina y Felina': [
+            { name: 'Pedro Estilista', avatar: '✂️' },
+            { name: 'Ana Cortés', avatar: '🐩' },
             { name: 'Equipo de Baño', avatar: '🛁' }
         ]
     };
@@ -678,11 +676,20 @@ document.addEventListener('DOMContentLoaded', () => {
         // Bath (and others): Mon-Fri 9am - 1pm, Sat 9am - 3pm
         
         const isVet = service === 'Servicio Veterinario';
+        const isGuarderia = service === 'Guardería Canina';
         const isSaturday = dayOfWeek === 6;
 
         if (isVet) {
              // Vet: 9am - 3:30pm. Slots: 9, 10, 11, 12, 1, 2. (Last slot 2pm-3pm).
              slots = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM'];
+        } else if (isGuarderia) {
+            // Guarderia: 7am - 6pm
+            if (isSaturday) {
+                slots = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM'];
+            } else {
+                slots = ['07:00 AM', '08:00 AM', '09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', 
+                         '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM', '06:00 PM'];
+            }
         } else {
             // Bath & Others
             if (isSaturday) {
@@ -737,6 +744,144 @@ document.addEventListener('DOMContentLoaded', () => {
         closeBookingModal();
         
         window.open(whatsappUrl, '_blank');
+    }
+
+    // ==========================================
+    // 6. MEDIA GALLERY (GUARDERIA)
+    // ==========================================
+    const guarderiaMediaContainer = document.getElementById('guarderia-media-container');
+    const guarderiaNextBtn = document.getElementById('guarderia-next-btn');
+    
+    if (guarderiaMediaContainer && guarderiaNextBtn) {
+        const guarderiaMedia = [
+            { type: 'video', src: '3.mp4' },
+            { type: 'image', src: 'https://i.postimg.cc/vTQhJdbF/96189e8a-8de3-4ea6-9964-9840795f6999.jpg' },
+            { type: 'image', src: 'https://i.postimg.cc/7L83vynQ/1befaae6-ce32-4cc3-bc03-54aebff6a935.jpg' },
+            { type: 'image', src: 'https://i.postimg.cc/6QfGD4Qg/69a011b8-7eed-42a8-a59c-69f65833d807.jpg' }
+        ];
+
+        let currentMediaIndex = 0;
+
+        // Initialize transition
+        guarderiaMediaContainer.style.transition = 'opacity 0.3s ease';
+
+        guarderiaNextBtn.addEventListener('click', () => {
+            currentMediaIndex = (currentMediaIndex + 1) % guarderiaMedia.length;
+            const media = guarderiaMedia[currentMediaIndex];
+            
+            // Fade out
+            guarderiaMediaContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                guarderiaMediaContainer.innerHTML = '';
+                
+                if (media.type === 'video') {
+                    const video = document.createElement('video');
+                    video.src = media.src;
+                    video.autoplay = true;
+                    video.muted = true;
+                    video.loop = true;
+                    video.playsInline = true;
+                    video.style.cssText = 'width: 100%; height: 100%; object-fit: cover; display: block;';
+                    video.innerHTML = 'Tu navegador no soporta videos HTML5.';
+                    guarderiaMediaContainer.appendChild(video);
+                } else {
+                    const img = document.createElement('img');
+                    img.src = media.src;
+                    img.alt = 'Galería Guardería Canina';
+                    img.style.cssText = 'width: 100%; height: 100%; object-fit: cover; display: block;';
+                    guarderiaMediaContainer.appendChild(img);
+                }
+                
+                // Fade in
+                setTimeout(() => {
+                    guarderiaMediaContainer.style.opacity = '1';
+                }, 50);
+            }, 300);
+        });
+    }
+
+    // ==========================================
+    // 7. MEDIA GALLERY (BANHO)
+    // ==========================================
+    const banhoMediaContainer = document.getElementById('banho-media-container');
+    const banhoNextBtn = document.getElementById('banho-next-btn');
+    
+    if (banhoMediaContainer && banhoNextBtn) {
+        const banhoMedia = [
+            'https://i.postimg.cc/28gc5Mx3/ffa5f5ea-59f9-46aa-96e0-25e8038efbfd.jpg',
+            'https://i.postimg.cc/GpLFSFCj/68057bb9-9bc6-4b19-9157-ba4121cc73be.jpg',
+            'https://i.postimg.cc/FswWK8xz/c85de774-577e-4184-9fcd-afa31f1c0c99.jpg'
+        ];
+
+        let currentBanhoIndex = 0;
+
+        // Initialize transition
+        banhoMediaContainer.style.transition = 'opacity 0.3s ease';
+
+        banhoNextBtn.addEventListener('click', () => {
+            currentBanhoIndex = (currentBanhoIndex + 1) % banhoMedia.length;
+            const imgSrc = banhoMedia[currentBanhoIndex];
+            
+            // Fade out
+            banhoMediaContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                banhoMediaContainer.innerHTML = '';
+                
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = 'Galería Baño y Peluquería';
+                img.style.cssText = 'width: 100%; height: 100%; object-fit: cover; display: block;';
+                banhoMediaContainer.appendChild(img);
+                
+                // Fade in
+                setTimeout(() => {
+                    banhoMediaContainer.style.opacity = '1';
+                }, 50);
+            }, 300);
+        });
+    }
+
+    // ==========================================
+    // 8. MEDIA GALLERY (VETERINARIO)
+    // ==========================================
+    const veterinarioMediaContainer = document.getElementById('veterinario-media-container');
+    const veterinarioNextBtn = document.getElementById('veterinario-next-btn');
+    
+    if (veterinarioMediaContainer && veterinarioNextBtn) {
+        const veterinarioMedia = [
+            'https://i.postimg.cc/tJkZ6f17/53da7772-74a9-4b16-813a-5b78db8d565c.jpg',
+            'https://i.postimg.cc/dVLk75wX/05c418e9-de16-473b-815d-07e5a204cc41.jpg'
+        ];
+
+        let currentVeterinarioIndex = 0;
+
+        // Initialize transition
+        veterinarioMediaContainer.style.transition = 'opacity 0.3s ease';
+
+        veterinarioNextBtn.addEventListener('click', () => {
+            currentVeterinarioIndex = (currentVeterinarioIndex + 1) % veterinarioMedia.length;
+            const imgSrc = veterinarioMedia[currentVeterinarioIndex];
+            
+            // Fade out
+            veterinarioMediaContainer.style.opacity = '0';
+            
+            setTimeout(() => {
+                veterinarioMediaContainer.innerHTML = '';
+                
+                const img = document.createElement('img');
+                img.src = imgSrc;
+                img.alt = 'Galería Veterinaria';
+                img.style.cssText = 'width: 100%; height: 100%; object-fit: cover; display: block;';
+                veterinarioMediaContainer.appendChild(img);
+                
+                // Fade in
+                setTimeout(() => {
+                    veterinarioMediaContainer.style.opacity = '1';
+                }, 50);
+            }, 300);
+        });
     }
 
 });
