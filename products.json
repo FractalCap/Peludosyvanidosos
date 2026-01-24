@@ -1,0 +1,50 @@
+[
+  {
+    "id": "PROD_001",
+    "title": "Champú Premium para Perros",
+    "description": "Champú hipoalergénico con aroma a lavanda y avena, ideal para pieles sensibles. Deja el pelaje brillante y suave.",
+    "availability": "in stock",
+    "condition": "new",
+    "price": "45000 COP",
+    "link": "https://peludosyvanidosos.com/producto/champu-premium",
+    "image_link": "https://coreva-normal.trae.ai/api/ide/v1/text_to_image?prompt=bottle+of+premium+dog+shampoo+with+lavender+and+oatmeal+label%2C+white+background%2C+studio+lighting&image_size=square",
+    "brand": "Peludos Care",
+    "google_product_category": "Animals & Pet Supplies > Pet Supplies > Pet Grooming Supplies > Pet Shampoo & Conditioner"
+  },
+  {
+    "id": "PROD_002",
+    "title": "Kit de Juguetes para Gatos",
+    "description": "Set de 5 juguetes interactivos incluyendo ratones de catnip, varita con plumas y pelotas con cascabel.",
+    "availability": "in stock",
+    "condition": "new",
+    "price": "32000 COP",
+    "link": "https://peludosyvanidosos.com/producto/kit-gatos",
+    "image_link": "https://coreva-normal.trae.ai/api/ide/v1/text_to_image?prompt=set+of+interactive+cat+toys+including+catnip+mice+feather+wand+and+balls+on+white+background&image_size=square",
+    "brand": "MeowPlay",
+    "google_product_category": "Animals & Pet Supplies > Pet Supplies > Cat Supplies > Cat Toys"
+  },
+  {
+    "id": "PROD_003",
+    "title": "Galletas Orgánicas (500g)",
+    "description": "Snacks saludables hechos con ingredientes 100% naturales. Sin conservantes ni colorantes artificiales.",
+    "availability": "in stock",
+    "condition": "new",
+    "price": "18000 COP",
+    "link": "https://peludosyvanidosos.com/producto/galletas-organicas",
+    "image_link": "https://coreva-normal.trae.ai/api/ide/v1/text_to_image?prompt=bag+of+organic+dog+treats+cookies+natural+ingredients+packaging+mockup&image_size=square",
+    "brand": "NaturePaws",
+    "google_product_category": "Animals & Pet Supplies > Pet Supplies > Dog Supplies > Dog Treats"
+  },
+  {
+    "id": "PROD_004",
+    "title": "Cama Ortopédica Grande",
+    "description": "Cama de espuma viscoelástica para perros grandes. Funda lavable y base antideslizante. Máximo confort.",
+    "availability": "out of stock",
+    "condition": "new",
+    "price": "120000 COP",
+    "link": "https://peludosyvanidosos.com/producto/cama-ortopedica",
+    "image_link": "https://coreva-normal.trae.ai/api/ide/v1/text_to_image?prompt=large+orthopedic+dog+bed+memory+foam+gray+color+studio+shot&image_size=square",
+    "brand": "SleepyDog",
+    "google_product_category": "Animals & Pet Supplies > Pet Supplies > Pet Furniture > Pet Beds"
+  }
+]

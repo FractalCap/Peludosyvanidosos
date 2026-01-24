@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peludos y vanidosos | Estética y Cuidado para Mascotas</title>
+    <meta name="description" content="Servicios profesionales de estética y cuidado para mascotas en Bogotá.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <p>Visítanos en: 
+                <a href="https://maps.app.goo.gl/WP5FWVXo2cjPoBdG8" target="_blank" rel="noopener noreferrer">
+                    Cl 136 #96a-10, Bogotá <span style="margin-left: 4px;">📍</span>
+                </a>
+            </p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <!-- Top Level: Logo & Actions -->
+        <div class="header-top container">
+            <!-- Empty Left for Balance (optional, or remove if flex-space-between is enough) -->
+            <div class="header-spacer"></div>
+
+            <a href="#" class="logo">
+                Peludos y vanidosos
+            </a>
+
+            <div class="header-actions">
+                <button id="cartBtn" class="btn-icon" aria-label="Ver carrito">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16 11V7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7V11M5 9H19L20 21H4L5 9Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span id="cartCount" class="cart-badge">0</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+            </div>
+        </div>
+
+        <!-- Bottom Level: Navigation -->
+        <div class="header-bottom">
+            <nav class="nav-menu container">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#tienda" class="nav-link">Tienda</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-bg-video">
+                <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-1.2.1&auto=format&fit=cover&w=1920&q=80">
+                    <source src="https://videos.pexels.com/video-files/3045714/3045714-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    Tu navegador no soporta videos HTML5.
+                </video>
+            </div>
+            <div class="container hero-container">
+                <div class="hero-text fade-in-up">
+                    <h2 class="hero-subtitle">Ese pelo terso y brillante que todos</h2>
+                    <h1 class="hero-title-script">Deseamos</h1>
+                    <div class="hero-description">
+                        <p>Ver en nuestras mascotas es fruto de su salud.<br>
+                        Es la cara visible de su estado físico general.<br>
+                        Por eso, cuidar el pelo de un perro no es cuestión únicamente<br>
+                        de tener el cepillo más adecuado<br>
+                        para el nuestro o ser regulares con su aseo.</p>
+                    </div>
+                    <div style="margin-top: 2.5rem;">
+                         <a href="#tienda" class="btn btn-hero ripple-effect">
+                            <span>Ver Catálogo</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-left: 8px;">
+                                <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tienda Section -->
+        <section id="tienda" class="section">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-subtitle">Tienda Online</span>
+                    <h2>Productos Exclusivos</h2>
+                    <p>Selección curada para el bienestar de tu mascota</p>
+                </header>
+
+
+
+                <div id="product-grid" class="grid grid-auto fade-in-up delay-100">
+                    <!-- Products will be loaded here -->
+                    <div style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+                        <p>Cargando productos...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Servicios Section -->
+        <section id="servicios" class="section services-section">
+            <div class="container">
+                <header class="section-header fade-in-up">
+                    <span class="section-subtitle">Nuestros Servicios</span>
+                    <h2>Experiencia de Cuidado Completa</h2>
+                    <div class="service-hours-badge">
+                        <span class="icon">🕒</span>
+                        <span class="text">Horarios de atención: Lunes a Viernes de 9am a 1pm</span>
+                    </div>
+                </header>
+
+                <div class="unified-service-container fade-in-up delay-200">
+                    <div class="service-selector-wrapper">
+                        <div class="service-menu">
+                            <button class="service-tab active" data-service="veterinario">
+                                <span class="tab-icon">🩺</span>
+                                <span class="tab-text">Servicio Veterinario</span>
+                            </button>
+                            <button class="service-tab" data-service="grooming">
+                                <span class="tab-icon">✂️</span>
+                                <span class="tab-text">Grooming Canino</span>
+                            </button>
+                            <button class="service-tab" data-service="drenaje">
+                                <span class="tab-icon">⚡</span>
+                                <span class="tab-text">Drenaje de Energía</span>
+                            </button>
+                            <button class="service-tab" data-service="banho">
+                                <span class="tab-icon">🛁</span>
+                                <span class="tab-text">Baño y Peluquería</span>
+                            </button>
+                        </div>
+                        
+                        <div class="service-details-panel">
+                            <!-- Veterinario Content -->
+                            <div class="service-content active" id="content-veterinario">
+                                <div class="content-header">
+                                    <h3>Servicio Veterinario</h3>
+                                    <p>Atención profesional integral para la salud de tu mascota.</p>
+                                </div>
+                                <div class="content-body">
+                                    <ul>
+                                        <li>✅ Consulta general y especializada</li>
+                                        <li>✅ Vacunación y desparasitación</li>
+                                        <li>✅ Chequeos preventivos</li>
+                                    </ul>
+                                </div>
+                                <div class="content-action">
+                                    <button class="btn btn-primary schedule-btn" data-service="Servicio Veterinario">Agendar Cita</button>
+                                </div>
+                            </div>
+
+                            <!-- Grooming Content -->
+                            <div class="service-content" id="content-grooming">
+                                <div class="content-header">
+                                    <h3>Grooming Canino</h3>
+                                    <p>Estética especializada para resaltar la belleza de tu perro.</p>
+                                </div>
+                                <div class="content-body">
+                                    <ul>
+                                        <li>✅ Cortes de raza específicos</li>
+                                        <li>✅ Styling profesional</li>
+                                        <li>✅ Cuidado del pelaje</li>
+                                    </ul>
+                                </div>
+                                <div class="content-action">
+                                    <button class="btn btn-primary schedule-btn" data-service="Grooming Canino">Agendar Cita</button>
+                                </div>
+                            </div>
+
+                            <!-- Drenaje Content -->
+                            <div class="service-content" id="content-drenaje">
+                                <div class="content-header">
+                                    <h3>Drenaje de Energía</h3>
+                                    <p>Equilibrio físico y mental para reducir la ansiedad.</p>
+                                </div>
+                                <div class="content-body">
+                                    <ul>
+                                        <li>✅ Ejercicios dirigidos</li>
+                                        <li>✅ Corrección de conducta</li>
+                                        <li>✅ Estimulación mental</li>
+                                    </ul>
+                                </div>
+                                <div class="content-action">
+                                    <button class="btn btn-primary schedule-btn" data-service="Drenaje de Energía y Corrección de Conducta">Agendar Cita</button>
+                                </div>
+                            </div>
+
+                            <!-- Banho Content -->
+                            <div class="service-content" id="content-banho">
+                                <div class="content-header">
+                                    <h3>Baño y Peluquería</h3>
+                                    <p>Higiene profunda y corte para perros y gatos.</p>
+                                </div>
+                                <div class="content-body">
+                                    <ul>
+                                        <li>✅ Baños medicados y cosméticos</li>
+                                        <li>✅ Corte de uñas y limpieza de oídos</li>
+                                        <li>✅ Productos hipoalergénicos</li>
+                                    </ul>
+                                </div>
+                                <div class="content-action">
+                                    <button class="btn btn-primary schedule-btn" data-service="Baño y Peluquería Canina y Felina">Agendar Cita</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nosotros Section -->
+        <section id="nosotros" class="section">
+            <div class="container">
+                <div class="grid grid-2" style="align-items: center;">
+                    <div class="fade-in-up">
+                        <span class="section-subtitle">Sobre Nosotros</span>
+                        <h2>Pasión por los Animales</h2>
+                        <p>En <strong>Peludos y vanidosos</strong>, entendemos que tu mascota es parte de la familia. Nos dedicamos a ofrecer una experiencia de grooming superior, donde la estética se encuentra con el bienestar.</p>
+                        <p>Nuestro equipo de profesionales utiliza productos de alta calidad y técnicas suaves para asegurar que tu peludo se vea y se sienta espectacular.</p>
+                        <ul style="margin-top: 1.5rem; display: grid; gap: 0.5rem;">
+                            <li style="display: flex; align-items: center; gap: 0.5rem;">✅ Profesionales certificados</li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem;">✅ Productos hipoalergénicos</li>
+                            <li style="display: flex; align-items: center; gap: 0.5rem;">✅ Ambiente libre de estrés</li>
+                        </ul>
+                    </div>
+                    <div class="fade-in-up delay-100">
+                        <div style="position: relative; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-xl);">
+                            <img src="https://i.postimg.cc/GpPLj9Jx/008.jpg" alt="Perro feliz en spa" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- Contacto Section Removed -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-heading">Peludos y vanidosos</h3>
+                    <p>Estética y cuidado profesional para mascotas en Bogotá.</p>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#tienda">Tienda</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-heading">Horarios</h4>
+                    <ul class="footer-links">
+                        <li>Lunes - Viernes: 8am - 6pm</li>
+                        <li>Sábado: 9am - 4pm</li>
+                        <li>Domingo: Cerrado</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--color-gray-800);">
+                <p>&copy; 2024 Peludos y vanidosos. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Overlay -->
+    <div id="cartOverlay" class="cart-overlay">
+        <aside class="cart-panel">
+            <div class="cart-header">
+                <h3>Tu Carrito 🛍️</h3>
+                <button id="closeCart" style="font-size: 1.5rem;">&times;</button>
+            </div>
+            <div id="cartItems" class="cart-body">
+                <!-- Items will be injected here -->
+                <p style="text-align: center; color: var(--text-muted);">Tu carrito está vacío</p>
+            </div>
+            <div class="cart-footer">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-weight: 700; font-size: 1.25rem;">
+                    <span>Total:</span>
+                    <span id="cartTotal">0 COP</span>
+                </div>
+                <button id="checkoutBtn" class="btn btn-primary" style="width: 100%;">
+                    Completar pedido en WhatsApp 📱
+                </button>
+            </div>
+        </aside>
+    </div>
+
+
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/573004761078" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat en WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#ffffff">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+        <div class="booking-container">
+            <header class="booking-header">
+                <h3>Agendar Cita</h3>
+                <button id="closeBooking" class="close-btn">&times;</button>
+            </header>
+            
+            <div class="booking-progress">
+                <div class="progress-step active" data-step="1">1</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">2</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">3</div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">4</div>
+            </div>
+
+            <div class="booking-body">
+                <!-- Step 1: Service & Professional -->
+                <div id="bookingStep1" class="booking-step active">
+                    <h4 class="step-title">Selecciona el Profesional</h4>
+                    <p class="step-desc">Elige el especialista para <span id="selectedServiceName"></span></p>
+                    <div id="professionalList" class="grid-list">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Step 2: Date -->
+                <div id="bookingStep2" class="booking-step">
+                    <h4 class="step-title">Selecciona la Fecha</h4>
+                    <div class="calendar-wrapper">
+                        <div class="calendar-header">
+                            <button id="prevMonth" class="btn-icon">&lt;</button>
+                            <span id="currentMonthYear"></span>
+                            <button id="nextMonth" class="btn-icon">&gt;</button>
+                        </div>
+                        <div class="calendar-grid" id="calendarGrid">
+                            <!-- Injected via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Time -->
+                <div id="bookingStep3" class="booking-step">
+                    <h4 class="step-title">Selecciona la Hora</h4>
+                    <p class="step-desc">Horarios disponibles para el <span id="selectedDateDisplay"></span></p>
+                    <div id="timeSlots" class="slots-grid">
+                        <!-- Injected via JS -->
+                    </div>
+                </div>
+
+                <!-- Step 4: Summary -->
+                <div id="bookingStep4" class="booking-step">
+                    <h4 class="step-title">Confirma tu Cita</h4>
+                    <div class="booking-summary-card">
+                        <div class="summary-item">
+                            <span class="label">Servicio:</span>
+                            <span class="value" id="summaryService"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Profesional:</span>
+                            <span class="value" id="summaryProfessional"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Fecha:</span>
+                            <span class="value" id="summaryDate"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="label">Hora:</span>
+                            <span class="value" id="summaryTime"></span>
+                        </div>
+                    </div>
+                    <p class="disclaimer">Al confirmar, se abrirá WhatsApp para enviar los detalles de tu cita.</p>
+                </div>
+            </div>
+
+            <footer class="booking-footer">
+                <button id="prevStepBtn" class="btn btn-outline" style="visibility: hidden;">Atrás</button>
+                <button id="nextStepBtn" class="btn btn-primary" disabled>Siguiente</button>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
